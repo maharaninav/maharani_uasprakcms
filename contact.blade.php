@@ -1,58 +1,24 @@
-@extends('layouts.public.app')
-@section('content')
-<!-- Page content-->
- <br><br><br><br>
-<section class="py-5">
-    <div class="container px-5">
-        <!-- Contact form-->
-        <div class="bg-light rounded-4 py-5 px-4 px-md-5">
-            <div class="text-center mb-5">
-                <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                <h1 class="fw-bolder">Get in touch</h1>
-                <p class="lead fw-normal text-muted mb-0">Let's work together!</p>
+<html>
+    <head>
+        <style>
+            .footer{
+                text-align: center;
+                padding: 20px 0;
+                color: #aaaaaa;
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+            <h1>Hi, {{$name}}</h1>
             </div>
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-8 col-xl-6">
-                    @if (session('success'))
-                        <div class="alert alert-success">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-                    @if (session('error'))
-                        <div class="alert alert-danger">
-                            {{ session('error') }}
-                        </div>
-                    @endif
-                    <form id="contactForm" action="{{ route('contact.store') }}" method="POST">
-                        @csrf
-                        <!-- Name input-->
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." required />
-                            <label for="name">Full name</label>
-                        </div>
-                        <!-- Email address input-->
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" required />
-                            <label for="email">Email address</label>
-                        </div>
-                        <!-- Phone number input-->
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" name="phone_number" type="tel" placeholder="(123) 456-7890" required />
-                            <label for="phone">Phone number</label>
-                        </div>
-                        <!-- Message input-->
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" name="contact_message" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
-                            <label for="message">Message</label>
-                        </div>
-                        <!-- Submit Button-->
-                        <div class="d-grid">
-                            <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
-                        </div>
-                    </form>
-                </div>
+            <div class="content">
+                <p>Thank you for getting in touch with us. Here is the message we received from you:</p>
+                <p>{!! $contact_message !!}</p>
             </div>
+            <div class="footer"></div>
         </div>
-    </div>
-</section>
-@endsection
+    </body>
+</html>
