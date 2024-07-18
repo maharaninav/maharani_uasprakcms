@@ -5,33 +5,50 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Edit Data Home</div>
+                <div class="card-header">Edit Profile Data</div>
 
                 <div class="card-body">
-                    <form action="{{ route('home.update', $home->id) }}" method="POST" enctype="multipart/form-data">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <form action="{{ route('profile.update', $profile->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
-                        <div class="form-group">
-                            <label for="about">About</label>
-                            <textarea class="form-control" id="about" name="about" rows="3" required>{{ $home->about }}</textarea>
+                        <div class="mb-3">
+                            <label for="education" class="form-label">Education</label>
+                            <input type="text" id="education" name="education" class="form-control" value="{{ old('education', $profile->education) }}" required>
                         </div>
 
-                        <div class="form-group">
-                            <label for="expertise">Expertise</label>
-                            <input type="text" class="form-control" id="expertise" name="expertise" value="{{ $home->expertise }}" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="image">Image</label>
-                            <input type="file" class="form-control-file" id="image" name="image">
-                            @if($home->image)
-                                <p>Current Image:</p>
-                                <img src="{{ Storage::url($home->image) }}" alt="Current Image" style="max-width: 300px;">
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Image</label>
+                            <input type="file" id="image" name="image" class="form-control">
+                            @if ($profile->image)
+                                <img src="{{ Storage::url($profile->image) }}" alt="Image" style="width: 100px;">
                             @endif
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <div class="mb-3">
+                            <label for="passion" class="form-label">Passion</label>
+                            <input type="text" id="passion" name="passion" class="form-control" value="{{ old('passion', $profile->passion) }}" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="image2" class="form-label">Image 2</label>
+                            <input type="file" id="image2" name="image2" class="form-control">
+                            @if ($profile->image2)
+                                <img src="{{ Storage::url($profile->image2) }}" alt="Image 2" style="width: 100px;">
+                            @endif
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Update</button>
                     </form>
                 </div>
             </div>
