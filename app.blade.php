@@ -1,151 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Private</title>
 
-  <title>Personal Portofolio</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <!-- Custom fonts for this template-->
+    <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
- 
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-  <link href="{{ asset('vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-  <link href="{{ asset('vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/my-login.css') }}" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: MeFamily
-  * Template URL: https://bootstrapmade.com/family-multipurpose-html-bootstrap-template-free/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  <style>
-        .div-6 {
-      color: #fff;
-      white-space: nowrap;
-      justify-content: center;
-      border-radius: 100px;
-      box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
-      background-color: #669fd6;
-      flex-grow: 1;
-      padding: 15px 31px;
-      font: 600 20px Poppins, sans-serif;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      margin-left: 10px;
-    }
-  </style>
+    <!-- Custom styles for this template-->
+    <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
 </head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <h1 class="logo"><a href="index.html"style="font-family: 'Garamond', sans-serif;">PERSONAL PORTOFOLIO</a></h1>
-      <nav id="navbar" class="navbar">
-  <!-- Uncomment below if you prefer to use an image logo -->
-  <!-- <a href="index.html" class="logo"><img src="{{ asset('') }}img/logo.png" alt="" class="img-fluid"></a> -->
-        <ul>
-          <li><a href="/" class="nav-link">Home</a></li>
-          <li><a href="profile" class="nav-link">Profile</a></li>
-          <li><a href="contact" class="nav-link">Contact</a></li>
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+            </a>
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ URL::to('dashboard') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- Heading -->
+            <div class="sidebar-heading">Data</div>
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ URL::to('home') }} ">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Add Home</span></a>
+                <a class="nav-link" href="{{ URL::to('profiles') }} ">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Add Profile</span></a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
         </ul>
-
-        <button onclick="location.href='login'" class="btn btn-primary login-btn">Login</button>
-
-        <i class="bi bi-list mobile-nav-toggle"></i>
-                      <style>
-                      .navbar {
-                      background-color:none;
-                      padding: 1rem;
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                    }
-
-                    .nav-link {
-                      color: #fff;
-                      text-decoration: none;
-                      transition: color 0.2s ease;
-                    }
-
-                    .nav-link:hover {
-                      color: #ccc;
-                    }
-
-                    .login-btn {
-                      background-color: #337ab7;
-                      color: #fff;
-                      border: none;
-                      padding: 0.5rem 1rem;
-                      font-size: 1rem;
-                      cursor: pointer;
-                    }
-
-                    .login-btn:hover {
-                      background-color: #23527c;
-                    }
-                    </style>
-</nav>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- Topbar Search -->
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Maharani</span>
+                                <img class="img-profile rounded-circle" src="{{ asset('img/user.png') }}">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <!-- Logout Link with Form -->
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+                @yield('content')
+                <!-- Bootstrap core JavaScript-->
+                <script src="{{asset('js/vendor/jquery/jquery.min.js')}}"></script>
+                <script src="{{asset('js/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+                <!-- Core plugin JavaScript-->
+                <script src="{{asset('js/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+                <!-- Custom scripts for all pages-->
+                <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+                <!-- Page level plugins -->
+                <script src="{{asset('js/vendor/chart.js/Chart.min.js')}}"></script>
+                <!-- Page level custom scripts -->
+                <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
+                <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
+            </div>
+        </div>
     </div>
-  </header><!-- End Header -->
-
-        <!-- Konten -->
-        @yield('content')
-
-        <footer id="footer" style="background-color: #FFFFF;">
-          <div class="container">
-             <h3 style="font-family: 'Garamond', sans-serif;">PERSONAL PORTOFOLIO</h3>
-             <div class="social-links">
-            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-        <div class="copyright">
-            &copy; Copyright <strong><span>Maharani</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/family-multipurpose-html-bootstrap-template-free/ -->
-            Designed by <a href="https://bootstrapmade.com/">Bootstrap</a>
-        </div>
-    </div>
-</footer><!-- End Footer -->
-
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
-  <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-  <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
-  <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
-
-  <!-- Template Main JS File -->
-  <script src="{{ asset('js/main.js') }}"></script>
-
 </body>
-
 </html>
